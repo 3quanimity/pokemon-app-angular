@@ -37,15 +37,16 @@
             <div class="card" [style.background-color]="getTypeColor(pokemon.type[0])">
                 <div class="card-image">
                     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemon.num}}.png"
-                        alt="Nidoqueen">
+                        alt="{{pokemon.name}}">
                 </div>
                 <div class="card-content">
-                    <span class="card-title">{{pokemon.name}} <small class="text-muted">({{pokemon.num}})</small></span>
+                    <ul class="collection">
+                        <li class="collection-item center-align">{{pokemon.name}}<small class="text-muted">
+                                ({{pokemon.num}})</small></li>
+                    </ul>
                     <p>Height: {{pokemon.height}}</p>
                     <p>Weight: {{pokemon.weight}}</p>
-                    <ul class="collection">
-                        <li class="collection-item">Type: {{pokemon.type}}</li>
-                    </ul>
+                    <p>Type: {{pokemon.type.join(", ")}}</p>
                 </div>
                 <div class="card-action">
                     <a href="https://www.pokemon.com/us/pokedex/{{pokemon.name}}" target="_blank">Pokedex</a>
