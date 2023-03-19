@@ -1,9 +1,19 @@
 export class Pokemon {
   id: number;
-  hp: number;
-  cp: number;
+  egg: string;
+  img: string;
+  num: string;
   name: string;
-  picture: string;
-  types: Array<string>;
-  created: Date;
+  type: Array<string>;
+  candy: string;
+  height: string;
+  weight: string;
+  avg_spawns: number;
+  spawn_time: string;
+  weaknesses: Array<string>;
+  candy_count?: number;
+  multipliers?: Array<number> | null;
+  spawn_chance: number;
+  next_evolution?: Array<{ num: string; name: string }>;
+  prev_evolution?: Array<{ num: string; name: string }>;
 }
