@@ -1,9 +1,44 @@
-<h1>Pokedex</h1>
+<div class="p-4">
+    <h1>Pokedex</h1>
+</div>
 
-<input #input (keyup)="selectPokemon(input.value)" type="text">
-<h2>{{pokemonSelected?.name}}</h2>
+<!-- search bar -->
+<div class="d-flex flex-row justify-content-md-center border-bottom p-4">
+    <div class="col">
+        <div class="d-flex flex-row align-self-center mb-2">
+            <input #input (keyup.enter)="selectPokemon(input.value)" type="text" class="col form-control">
+        </div>
+    </div>
+</div>
 
-<p>{{pokemonList[1].name}}</p>
-<p>{{pokemonList[2].name}}</p>
-<p>{{pokemonList[3].name}}</p>
-<!-- <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemonList[34].num}}.png" alt=""> -->
+<!-- search result  -->
+<h2 *ngIf="pokemonSelected">You have selected 👉 {{pokemonSelected.name}}</h2>
+<h2 *ngIf="input.value && !pokemonSelected">🙈 No pokemon were found!</h2>
+
+<!-- pokemons list -->
+<div class="p-4">
+    <div id="results" class="row row-cols-5 g-4" style="display: flex;">
+        <div class="col" *ngFor="let pokemon of pokemonList">
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between">
+                    <span class="fs-6 fw-bold">{{pokemon.name}}</span><small class="text-muted">{{pokemon.num}}</small>
+                </div>
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemon.num}}.png"
+                    class="card-img-top" alt="Nidoqueen">
+                <div class="card-body">
+                    <p class="card-text">Height: {{pokemon.height}}</p>
+                    <p class="card-text">Weight: {{pokemon.weight}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Type: {{pokemon.type}}</li>
+                </ul>
+                <div class="card-footer bg-transparent d-flex flex-row">
+                    <a href="https://www.pokemon.com/us/pokedex/{{pokemon.name}}" class="card-link text-muted"
+                        target="_blank">Pokedex</a>
+                    <a href="https://bulbapedia.bulbagarden.net/wiki/{{pokemon.name}}_(Pok%C3%A9mon)"
+                        class="card-link text-muted" target="_blank">Wiki</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
