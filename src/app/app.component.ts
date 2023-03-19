@@ -16,16 +16,9 @@ export class AppComponent implements OnInit {
   }
 
   selectPokemon(pokemonId: string) {
-    const pokemon = this.pokemonList.find(
+    this.pokemonSelected = this.pokemonList.find(
       (pokemon) => pokemon.id === Number(pokemonId)
     );
-    if (pokemon) {
-      console.log(`The selected pokemon is ${pokemon?.name}`);
-      this.pokemonSelected = pokemon;
-    } else {
-      console.log("No pokemon was found");
-      this.pokemonSelected = pokemon;
-    }
   }
 
   filterPokemons(searchTerm: string) {
