@@ -1,37 +1,39 @@
-<div class="row">
-    <div class="col s12">
-        <h1 class="center-align">Pokedex</h1>
+<div class="container">
+    <!-- Page Title -->
+    <div class="row">
+        <div class="col s12">
+            <h1 class="center-align">Pokedex</h1>
+        </div>
     </div>
-</div>
 
-<!-- search bar -->
-<div class="row">
-    <div class="col s12">
-        <div class="card-panel">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="input" #input (keyup.enter)="selectPokemon(input.value)" type="text" class="validate">
-                    <label for="input">Search Pokemon</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="input2" #input2 (keyup)="filterPokemons(input2.value)" type="text" class="validate">
-                    <label for="input2">Filter Pokemon</label>
+    <!-- search bar -->
+    <div class="row">
+        <div class="col s12">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="input" #input (keyup.enter)="selectPokemon(input.value)" type="text"
+                            class="validate">
+                        <label for="input">Search Pokemon</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="input2" #input2 (keyup)="filterPokemons(input2.value)" type="text" class="validate">
+                        <label for="input2">Filter Pokemon</label>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- search result  -->
-<div class="row">
-    <div class="col s12">
-        <h2 *ngIf="pokemonSelected" class="center-align">You have selected 👉 {{pokemonSelected.name}}</h2>
-        <h2 *ngIf="input.value && !pokemonSelected" class="center-align">🙈 No pokemon were found!</h2>
+    <!-- search result  -->
+    <div class="row">
+        <div class="col s12">
+            <h2 *ngIf="pokemonSelected" class="center-align">You have selected 👉 {{pokemonSelected.name}}</h2>
+            <h2 *ngIf="input.value && !pokemonSelected" class="center-align">🙈 No pokemon were found!</h2>
+        </div>
     </div>
-</div>
 
-<!-- pokemons list -->
-<div class="container">
+    <!-- pokemons list -->
     <div class="row">
         <div *ngFor="let pokemon of filteredPokemons" class="col s12 m6 l4 xl3">
             <div class="card" [style.background-color]="getTypeColor(pokemon.type[0])">
