@@ -36,7 +36,7 @@
     <!-- pokemons list -->
     <div class="row">
         <div *ngFor="let pokemon of filteredPokemons" class="col s12 m6 l4 xl3">
-            <div class="card" [style.background-color]="getTypeColor(pokemon.type[0])">
+            <div class="card" [style.background-color]="getTypeColor(pokemon.type[0])" pkmnCardStyling>
                 <div class="card-image">
                     <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemon.num}}.png"
                         alt="{{pokemon.name}}">
