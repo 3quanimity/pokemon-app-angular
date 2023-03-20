@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardStylingDirective } from './card-styling.directive';
+import { PkmnTypeColorPipe } from './pkmn-type-color.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardStylingDirective
+    CardStylingDirective,
+    PkmnTypeColorPipe
   ],
   imports: [
     BrowserModule,

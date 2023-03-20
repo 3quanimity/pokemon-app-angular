@@ -4,20 +4,28 @@ import { Directive, ElementRef, HostListener, Input } from "@angular/core";
   selector: "[pkmnCardStyling]",
 })
 export class CardStylingDirective {
+  private defaultBorderColor: string = "#f5f5f5";
+  private defaultBorderWidth: string = "4px";
+  private highlightedBorderWidth: string = "6px";
+  private highlightedBgColor: string = "#fff";
+
   constructor(private el: ElementRef) {
-    this.setBorderColor("4px", "#f5f5f5");
+    this.setBorderColor(this.defaultBorderWidth, this.defaultBorderColor);
     this.setBackgroundColor(this.getTypeColor(this.type));
   }
 
   @Input("pkmnCardStyling") type: string;
 
   @HostListener("mouseenter") onMouseEnter() {
-    this.setBorderColor("6px", this.getTypeColor(this.type));
-    this.setBackgroundColor("#fff");
+    this.setBorderColor(
+      this.highlightedBorderWidth,
+      this.getTypeColor(this.type)
+    );
+    this.setBackgroundColor(this.highlightedBgColor);
   }
 
   @HostListener("mouseleave") onMouseLeave() {
-    this.setBorderColor("4px", "#f5f5f5");
+    this.setBorderColor(this.defaultBorderWidth, this.defaultBorderColor);
     this.setBackgroundColor(this.getTypeColor(this.type));
   }
 
