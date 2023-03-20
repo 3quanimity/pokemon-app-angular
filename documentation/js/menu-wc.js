@@ -59,19 +59,36 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' : 'data-target="#xs-components-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' }>
+                                            'data-target="#components-links-module-AppModule-ecfc84102f06bf633990d065bb1434e0ce538bd16d3500d44889e9af555de6bd942716dccf8577d241ce09125e11486034b79da15be51e32681e07f27bb75c0f"' : 'data-target="#xs-components-links-module-AppModule-ecfc84102f06bf633990d065bb1434e0ce538bd16d3500d44889e9af555de6bd942716dccf8577d241ce09125e11486034b79da15be51e32681e07f27bb75c0f"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' :
-                                            'id="xs-components-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-ecfc84102f06bf633990d065bb1434e0ce538bd16d3500d44889e9af555de6bd942716dccf8577d241ce09125e11486034b79da15be51e32681e07f27bb75c0f"' :
+                                            'id="xs-components-links-module-AppModule-ecfc84102f06bf633990d065bb1434e0ce538bd16d3500d44889e9af555de6bd942716dccf8577d241ce09125e11486034b79da15be51e32681e07f27bb75c0f"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AppComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/PageNotFoundComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >PageNotFoundComponent</a>
                                             </li>
+                                        </ul>
+                                    </li>
+                            </li>
+                            <li class="link">
+                                <a href="modules/AppRoutingModule.html" data-type="entity-link" >AppRoutingModule</a>
+                            </li>
+                            <li class="link">
+                                <a href="modules/PokemonModule.html" data-type="entity-link" >PokemonModule</a>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#components-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' : 'data-target="#xs-components-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' }>
+                                            <span class="icon ion-md-cog"></span>
+                                            <span>Components</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' :
+                                            'id="xs-components-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' }>
                                             <li class="link">
                                                 <a href="components/PokemonDetailsComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >PokemonDetailsComponent</a>
                                             </li>
@@ -82,13 +99,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#directives-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' : 'data-target="#xs-directives-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' }>
+                                        'data-target="#directives-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' : 'data-target="#xs-directives-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' }>
                                         <span class="icon ion-md-code-working"></span>
                                         <span>Directives</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' :
-                                        'id="xs-directives-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="directives-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' :
+                                        'id="xs-directives-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' }>
                                         <li class="link">
                                             <a href="directives/CardStylingDirective.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >CardStylingDirective</a>
                                         </li>
@@ -96,21 +113,18 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 </li>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#pipes-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' : 'data-target="#xs-pipes-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' }>
+                                            'data-target="#pipes-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' : 'data-target="#xs-pipes-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' }>
                                             <span class="icon ion-md-add"></span>
                                             <span>Pipes</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' :
-                                            'id="xs-pipes-links-module-AppModule-6249f61344127fa9dfa9702b6710bca2c03bf108f44015cb8a59f5fe58bfd59e7f1fd4586cfc128b11e916e8efb8501f5aabb303f5a392b4a94a7784e947159d"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' :
+                                            'id="xs-pipes-links-module-PokemonModule-b49077960ab8ff990d1d673217bb2d2f28642fffa23eab024305610b58edac7b9f43c95236eed0d06342f499a516fa35984ecf5e66058490f05996aff7c166d6"' }>
                                             <li class="link">
                                                 <a href="pipes/PkmnTypeColorPipe.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >PkmnTypeColorPipe</a>
                                             </li>
                                         </ul>
                                     </li>
-                            </li>
-                            <li class="link">
-                                <a href="modules/AppRoutingModule.html" data-type="entity-link" >AppRoutingModule</a>
                             </li>
                 </ul>
                 </li>
