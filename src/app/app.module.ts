@@ -7,6 +7,7 @@ import { CardStylingDirective } from './card-styling.directive';
 import { PkmnTypeColorPipe } from './pkmn-type-color.pipe';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.compo
     CardStylingDirective,
     PkmnTypeColorPipe,
     PokemonListComponent,
-    PokemonDetailsComponent
+    PokemonDetailsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
