@@ -49,6 +49,9 @@
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
         <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
@@ -64,6 +67,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -88,11 +97,11 @@
 
 
 
-            <tr>
-                <td class="col-md-3">template</td>
-                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;h1&gt;Welcome to {{ title }}!&lt;/h1&gt;</code></pre></td>
-            </tr>
 
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./app.component.html</code></td>
+            </tr>
 
 
 
@@ -118,12 +127,35 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#title" >title</a>
+                                <a href="#filteredPokemons" >filteredPokemons</a>
+                            </li>
+                            <li>
+                                <a href="#pokemonList" >pokemonList</a>
+                            </li>
+                            <li>
+                                <a href="#pokemonSelected" >pokemonSelected</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#filterPokemons" >filterPokemons</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -138,7 +170,118 @@
 
 
 
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterPokemons"></a>
+                    <span class="name">
+                        <span ><b>filterPokemons</b></span>
+                        <a href="#filterPokemons"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterPokemons(searchTerm: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
 
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/app.component.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>searchTerm</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/app/app.component.ts:14</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <section>
     
     <h3 id="inputs">
@@ -148,27 +291,84 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="title"></a>
+                    <a name="filteredPokemons"></a>
                     <span class="name">
-                        <span ><b>title</b></span>
-                        <a href="#title"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>filteredPokemons</b></span>
+                        <a href="#filteredPokemons"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                        <i>Type : </i>        <code><a href="../classes/Pokemon.html" target="_self" >Pokemon[]</a></code>
 
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>&quot;ng-pokemon-app&quot;</code>
+                        <i>Default value : </i><code>this.pokemonList</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/app.component.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/app.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pokemonList"></a>
+                    <span class="name">
+                        <span ><b>pokemonList</b></span>
+                        <a href="#pokemonList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Pokemon.html" target="_self" >Pokemon[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>POKEMONS</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/app.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pokemonSelected"></a>
+                    <span class="name">
+                        <span ><b>pokemonSelected</b></span>
+                        <a href="#pokemonSelected"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Pokemon.html" target="_self" >Pokemon | undefined</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/app.component.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -181,18 +381,85 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &quot;@angular/core&quot;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &quot;@angular/core&quot;;
+import { POKEMONS } from &quot;./mock-pokemons&quot;;
+import { Pokemon } from &quot;./pokemon&quot;;
 
 @Component({
   selector: &quot;app-root&quot;,
-  template: &#x60;&lt;h1&gt;Welcome to {{ title }}!&lt;/h1&gt;&#x60;,
+  templateUrl: &quot;./app.component.html&quot;,
 })
-export class AppComponent {
-  title &#x3D; &quot;ng-pokemon-app&quot;;
+export class AppComponent implements OnInit {
+  pokemonList: Pokemon[] &#x3D; POKEMONS;
+  pokemonSelected: Pokemon | undefined;
+  filteredPokemons: Pokemon[] &#x3D; this.pokemonList;
+
+  ngOnInit() {
+    console.table(this.pokemonList);
+  }
+
+  // selectPokemon(pokemonId: string) {
+  //   this.pokemonSelected &#x3D; this.pokemonList.find(
+  //     (pokemon) &#x3D;&gt; pokemon.id &#x3D;&#x3D;&#x3D; Number(pokemonId)
+  //   );
+  // }
+
+  filterPokemons(searchTerm: string) {
+    if (searchTerm) {
+      this.filteredPokemons &#x3D; this.pokemonList.filter((pokemon) &#x3D;&gt;
+        pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    } else {
+      this.filteredPokemons &#x3D; this.pokemonList;
+    }
+  }
 }
 </code></pre>
     </div>
 
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;nav class&#x3D;&quot;nav-wrapper red&quot;&gt;
+    &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;brand-logo center&quot;&gt;
+        Pokedex
+    &lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;div class&#x3D;&quot;container&quot;&gt;
+
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+
+    &lt;!-- search bar --&gt;
+    &lt;!-- &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col s12&quot;&gt;
+            &lt;div class&#x3D;&quot;card-panel&quot;&gt;
+                &lt;div class&#x3D;&quot;row&quot;&gt;
+                    &lt;div class&#x3D;&quot;input-field col s6&quot;&gt;
+                        &lt;input id&#x3D;&quot;input&quot; #input (keyup.enter)&#x3D;&quot;selectPokemon(input.value)&quot; type&#x3D;&quot;text&quot;
+                            class&#x3D;&quot;validate&quot;&gt;
+                        &lt;label for&#x3D;&quot;input&quot;&gt;Search Pokemon&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div class&#x3D;&quot;input-field col s6&quot;&gt;
+                        &lt;input id&#x3D;&quot;input2&quot; #input2 (keyup)&#x3D;&quot;filterPokemons(input2.value)&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;validate&quot;&gt;
+                        &lt;label for&#x3D;&quot;input2&quot;&gt;Filter Pokemon&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; --&gt;
+
+    &lt;!-- search result  --&gt;
+    &lt;!-- &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col s12&quot;&gt;
+            &lt;h2 *ngIf&#x3D;&quot;pokemonSelected&quot; class&#x3D;&quot;center-align&quot;&gt;You have selected 👉 {{pokemonSelected.name}}&lt;/h2&gt;
+            &lt;h2 *ngIf&#x3D;&quot;input.value &amp;&amp; !pokemonSelected&quot; class&#x3D;&quot;center-align&quot;&gt;🙈 No pokemon were found!&lt;/h2&gt;
+        &lt;/div&gt;
+    &lt;/div&gt; --&gt;
+
+    &lt;!-- pokemons list --&gt;
+    &lt;!-- &lt;app-pokemon-list [filteredPokemons]&#x3D;&quot;this.filteredPokemons&quot;&gt;&lt;/app-pokemon-list&gt; --&gt;
+
+&lt;/div&gt;</code></pre>
+    </div>
 
 
     <div class="tab-pane fade " id="c-tree">
@@ -220,9 +487,9 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><h1>Welcome to {{ title }}!</h1></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'}];
-    var DIRECTIVES = [];
+        var COMPONENT_TEMPLATE = '<div><nav class="nav-wrapper red">    <a href="#" class="brand-logo center">        Pokedex    </a></nav><div class="container">    <router-outlet></router-outlet>    <!-- search bar -->    <!-- <div class="row">        <div class="col s12">            <div class="card-panel">                <div class="row">                    <div class="input-field col s6">                        <input id="input" #input (keyup.enter)="selectPokemon(input.value)" type="text"                            class="validate">                        <label for="input">Search Pokemon</label>                    </div>                    <div class="input-field col s6">                        <input id="input2" #input2 (keyup)="filterPokemons(input2.value)" type="text" class="validate">                        <label for="input2">Filter Pokemon</label>                    </div>                </div>            </div>        </div>    </div> -->    <!-- search result  -->    <!-- <div class="row">        <div class="col s12">            <h2 *ngIf="pokemonSelected" class="center-align">You have selected 👉 {{pokemonSelected.name}}</h2>            <h2 *ngIf="input.value && !pokemonSelected" class="center-align">🙈 No pokemon were found!</h2>        </div>    </div> -->    <!-- pokemons list -->    <!-- <app-pokemon-list [filteredPokemons]="this.filteredPokemons"></app-pokemon-list> --></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'PokemonDetailsComponent', 'selector': 'app-pokemon-details'},{'name': 'PokemonListComponent', 'selector': 'app-pokemon-list'}];
+    var DIRECTIVES = [{'name': 'CardStylingDirective', 'selector': '[pkmnCardStyling]'}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>
 <script src="../js/tree.js"></script>

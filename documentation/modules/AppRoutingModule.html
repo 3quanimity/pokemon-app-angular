@@ -72,16 +72,24 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &quot;@angular/core&quot;;
+import { RouterModule, Routes } from &quot;@angular/router&quot;;
+import { PageNotFoundComponent } from &quot;./page-not-found/page-not-found.component&quot;;
+import { PokemonDetailsComponent } from &quot;./pokemon-details/pokemon-details.component&quot;;
+import { PokemonListComponent } from &quot;./pokemon-list/pokemon-list.component&quot;;
 
-const routes: Routes &#x3D; [];
+const routes: Routes &#x3D; [
+  { path: &quot;pokemons&quot;, component: PokemonListComponent },
+  { path: &quot;pokemon/:id&quot;, component: PokemonDetailsComponent },
+  { path: &quot;&quot;, redirectTo: &quot;pokemons&quot;, pathMatch: &quot;full&quot; },
+  { path: &quot;**&quot;, component: PageNotFoundComponent }, // redirects to 404 page
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 </code></pre>
     </div>
 </div>
