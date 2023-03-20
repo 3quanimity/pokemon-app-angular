@@ -3,9 +3,7 @@ import { disableDebugTools } from "@angular/platform-browser";
 import { POKEMONS } from "./mock-pokemons";
 import { Pokemon } from "./pokemon";
 
-@Injectable({
-  providedIn: "root",
-})
+@Injectable()
 export class PokemonService {
   getPokemonList(): Pokemon[] {
     return POKEMONS;
