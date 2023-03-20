@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { Pokemon } from "../pokemon";
 import { POKEMONS } from "../mock-pokemons";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-pokemon-list",
@@ -9,6 +10,8 @@ import { POKEMONS } from "../mock-pokemons";
 })
 export class PokemonListComponent {
   @Input() filteredPokemons: Pokemon[];
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
     if (!this.filteredPokemons) {
@@ -51,5 +54,9 @@ export class PokemonListComponent {
       default:
         return "#fff";
     }
+  }
+
+  goToPokemon(pokemon: Pokemon) {
+    this.router.navigate(["/pokemon", pokemon.id]);
   }
 }

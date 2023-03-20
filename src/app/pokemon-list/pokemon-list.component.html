@@ -1,7 +1,7 @@
 <div class="row">
     <div *ngFor="let pokemon of filteredPokemons" class="col s12 m6 l4 xl3">
-        <div class="card" [style.background-color]="getTypeColor(pokemon.type[0])"
-            pkmnCardStyling="{{pokemon.type[0]}}">
+        <div class="card" [style.background-color]="getTypeColor(pokemon.type[0])" pkmnCardStyling="{{pokemon.type[0]}}"
+            (click)="goToPokemon(pokemon)" style="cursor: pointer;">
             <div class="card-image">
                 <small class="text-muted right">{{pokemon.num}}</small>
                 <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemon.num}}.png"
@@ -19,6 +19,7 @@
                 <p><b>Weight:</b> {{pokemon.weight}}</p>
                 <p><b>Spawn Chance:</b> {{pokemon.spawn_chance | percent}}</p>
             </div>
+            <!-- FIX: card actions clicks are conflicting with card click -->
             <div class="card-action center-align">
                 <a href="https://www.pokemon.com/us/pokedex/{{pokemon.name}}" target="_blank">Pokedex</a>
                 <a href="https://bulbapedia.bulbagarden.net/wiki/{{pokemon.name}}_(Pok%C3%A9mon)"

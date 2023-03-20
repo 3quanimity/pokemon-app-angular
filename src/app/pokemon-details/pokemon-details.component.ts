@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { POKEMONS } from "../mock-pokemons";
 import { Pokemon } from "../pokemon";
 
@@ -11,7 +11,7 @@ export class PokemonDetailsComponent {
   pokemonList: Pokemon[];
   pokemon: Pokemon | undefined;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.pokemonList = POKEMONS;
@@ -21,5 +21,9 @@ export class PokemonDetailsComponent {
         (pokemon) => pokemon.id === pokemonId
       );
     }
+  }
+
+  goToPokemonList() {
+    this.router.navigate(["/pokemons"]);
   }
 }
