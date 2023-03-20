@@ -15,11 +15,11 @@ export class AppComponent implements OnInit {
     console.table(this.pokemonList);
   }
 
-  selectPokemon(pokemonId: string) {
-    this.pokemonSelected = this.pokemonList.find(
-      (pokemon) => pokemon.id === Number(pokemonId)
-    );
-  }
+  // selectPokemon(pokemonId: string) {
+  //   this.pokemonSelected = this.pokemonList.find(
+  //     (pokemon) => pokemon.id === Number(pokemonId)
+  //   );
+  // }
 
   filterPokemons(searchTerm: string) {
     if (searchTerm) {

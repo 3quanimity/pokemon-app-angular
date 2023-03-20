@@ -1,1 +1,57 @@
-<p>pokemon-details works!</p>
+<div *ngIf="pokemon" class="row">
+    <div class="col s12 m8 offset-m2">
+        <h2 class="header center">{{ pokemon.name }}</h2>
+        <div class="card horizontal hoverable">
+            <div class="card-image">
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemon.num}}.png"
+                    alt="{{pokemon.name}}">
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <table class="bordered striped">
+                        <tbody>
+                            <tr>
+                                <td>ID</td>
+                                <td><small>{{ pokemon.num }}</small></td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td><strong>{{ pokemon.name }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Type</td>
+                                <td>
+                                    <span *ngFor="let type of pokemon.type" class="{{ type | pkmnTypeColor }}">{{ type
+                                        }}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Height</td>
+                                <td><strong>{{ pokemon.height }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Weight</td>
+                                <td><strong>{{ pokemon.weight }}</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Weaknesses</td>
+                                <td>
+                                    <span *ngFor="let weakness of pokemon.weaknesses"
+                                        class="{{ weakness | pkmnTypeColor }}">{{ weakness }}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Spawn Chance</td>
+                                <td><em>{{ pokemon.spawn_chance | percent }}</em></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-action">
+                    <a>Go Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h4 *ngIf='!pokemon' class="center">No Pokemon was found with such ID!</h4>

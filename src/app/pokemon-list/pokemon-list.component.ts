@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { Pokemon } from "../pokemon";
+import { POKEMONS } from "../mock-pokemons";
 
 @Component({
   selector: "app-pokemon-list",
@@ -8,6 +9,12 @@ import { Pokemon } from "../pokemon";
 })
 export class PokemonListComponent {
   @Input() filteredPokemons: Pokemon[];
+
+  ngOnInit() {
+    if (!this.filteredPokemons) {
+      this.filteredPokemons = POKEMONS;
+    }
+  }
 
   getTypeColor(type: string): string {
     switch (type) {
