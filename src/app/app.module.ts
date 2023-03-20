@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardStylingDirective } from './card-styling.directive';
 import { PkmnTypeColorPipe } from './pkmn-type-color.pipe';
+import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardStylingDirective,
-    PkmnTypeColorPipe
+    PkmnTypeColorPipe,
+    PokemonListComponent
   ],
   imports: [
     BrowserModule,
