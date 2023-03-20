@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CardStylingDirective } from './card-styling.directive';
 import { PkmnTypeColorPipe } from './pkmn-type-color.pipe';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { PokemonDetailsComponent } from './pokemon-details/pokemon-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardStylingDirective,
     PkmnTypeColorPipe,
-    PokemonListComponent
+    PokemonListComponent,
+    PokemonDetailsComponent
   ],
   imports: [
     BrowserModule,
