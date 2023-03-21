@@ -15,7 +15,6 @@ export class PokemonListComponent {
 
   ngOnInit() {
     if (!this.filteredPokemons) {
-      // this.filteredPokemons = this.pokemonService.getPokemonList();
       this.pokemonService
         .getPokemonList()
         .subscribe((pokemonList) => (this.filteredPokemons = pokemonList));
