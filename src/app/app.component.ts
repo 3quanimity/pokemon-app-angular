@@ -11,9 +11,7 @@ export class AppComponent implements OnInit {
   pokemonSelected: Pokemon | undefined;
   filteredPokemons: Pokemon[] = this.pokemonList;
 
-  ngOnInit() {
-    console.table(this.pokemonList);
-  }
+  ngOnInit() {}
 
   // selectPokemon(pokemonId: string) {
   //   this.pokemonSelected = this.pokemonList.find(

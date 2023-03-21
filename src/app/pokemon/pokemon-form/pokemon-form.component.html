@@ -1,0 +1,68 @@
+<form *ngIf="pokemon" (ngSubmit)="onSubmit()" #pokemonForm="ngForm">
+    <div class="row">
+        <div class="col s8 offset-s2">
+            <div class="card-panel">
+
+                <!-- Pokemon name -->
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" class="form-control" id="name" required pattern="^[a-zA-Z0-9àéèç]{1,25}$"
+                        [(ngModel)]="pokemon.name" name="name" #name="ngModel">
+                    <div [hidden]="name.valid || name.pristine" class="card-panel red accent-1">
+                        The Pokemon's Name is required (1-25).
+                    </div>
+                </div>
+
+                <!-- Pokemon height -->
+                <div class="form-group">
+                    <label for="height">Height</label>
+                    <input type="text" class="form-control" id="height" required
+                        pattern="^(?:[0-9]|[1-9][0-9]{1,2})(?:\.[0-9]+)?\s*m$" [(ngModel)]="pokemon.height"
+                        name="height" #height="ngModel">
+                    <div [hidden]="height.valid || height.pristine" class="card-panel red accent-1">
+                        Height must be between "0 m" and "999 m".
+                    </div>
+                </div>
+
+                <!-- Pokemon weight -->
+                <div class="form-group">
+                    <label for="weight">Weight</label>
+                    <input type="text" class="form-control" id="weight" required
+                        pattern="^(?:[0-9]|[1-9][0-9]{1,2})(?:\.[0-9]+)?\s*kg$" [(ngModel)]="pokemon.weight"
+                        name="weight" #weight="ngModel">
+                    <div [hidden]="weight.valid || weight.pristine" class="card-panel red accent-1">
+                        Weight must be between 0 and 999kg.
+                    </div>
+                </div>
+
+                <!-- Pokemon types -->
+                <form class="form-group">
+                    <label for="types">Types</label>
+                    <div class="row">
+                        <p class="col s12 m6 l4" *ngFor="let type of types">
+                            <label>
+                                <input type="checkbox" class="filled-in" id="{{ type }}" [value]="type"
+                                    [checked]="hasType(type)" [disabled]="!isTypeCheckable(type)"
+                                    (change)="selectType($event, type)" />
+                                <span [attr.for]="type">
+                                    <div class="{{ type | pkmnTypeColor }}">
+                                        {{ type }}
+                                    </div>
+                                </span>
+                            </label>
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Submit button -->
+                <div class="divider"></div>
+                <div class="section center">
+                    <button type="submit" class="waves-effect waves-light btn" [disabled]="!pokemonForm.form.valid">
+                        Valider</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+<h3 *ngIf="!pokemon" class="center">No Pokemon to edit...</h3>
