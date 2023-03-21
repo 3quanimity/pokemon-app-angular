@@ -32,7 +32,10 @@ export class PokemonEditComponent {
   ngOnInit() {
     this.pokemonId = Number(this.route.snapshot.paramMap.get("id"));
     if (this.pokemonId) {
-      this.pokemon = this.pokemonService.getPokemonById(this.pokemonId);
+      // this.pokemon = this.pokemonService.getPokemonById(this.pokemonId);
+      this.pokemonService
+        .getPokemonById(this.pokemonId)
+        .subscribe((pokemon) => (this.pokemon = pokemon));
     }
   }
 }

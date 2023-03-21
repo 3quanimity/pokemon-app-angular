@@ -1,16 +1,35 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { disableDebugTools } from "@angular/platform-browser";
-import { POKEMONS } from "./mock-pokemons";
+import { catchError, Observable, of, tap } from "rxjs";
 import { Pokemon } from "./pokemon";
 
 @Injectable()
 export class PokemonService {
-  getPokemonList(): Pokemon[] {
-    return POKEMONS;
+  constructor(private http: HttpClient) {}
+
+  getPokemonList(): Observable<Pokemon[] | []> {
+    // return POKEMONS;
+    return this.http.get<Pokemon[]>("api/pokemons").pipe(
+      tap((pokemonList) => this.log(pokemonList)),
+      catchError((error) => this.handleError(error, []))
+    );
   }
 
-  getPokemonById(pokemonId: number): Pokemon | undefined {
-    return POKEMONS.find((pokemon) => pokemon.id === pokemonId);
+  getPokemonById(pokemonId: number): Observable<Pokemon | undefined> {
+    // return POKEMONS.find((pokemon) => pokemon.id === pokemonId);
+    return this.http.get<Pokemon>(`api/pokemons/${pokemonId}`).pipe(
+      tap((pokemon) => this.log(pokemon)),
+      catchError((error) => this.handleError(error, undefined))
+    );
+  }
+
+  private log(response: Pokemon[] | Pokemon | undefined) {
+    console.table(response);
+  }
+
+  private handleError(error: Error, defaultValue: any) {
+    console.error(error);
+    return of(defaultValue);
   }
 
   getTypeColor(type: string): string {
