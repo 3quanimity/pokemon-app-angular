@@ -47,7 +47,8 @@ export class PokemonFormComponent {
   }
 
   onSubmit() {
-    console.log("Form Submitted");
-    this.router.navigate(["/pokemon", this.pokemon.id]);
+    this.pokemonService.updatePokemon(this.pokemon).subscribe(() => {
+      this.router.navigate(["/pokemon", this.pokemon.id]);
+    });
   }
 }
