@@ -3,6 +3,8 @@ import { Pokemon } from "../pokemon";
 import { Router } from "@angular/router";
 import { PokemonService } from "../pokemon.service";
 
+declare var M: any;
+
 @Component({
   selector: "app-pokemon-list",
   templateUrl: "./pokemon-list.component.html",
@@ -19,6 +21,9 @@ export class PokemonListComponent {
         .getPokemonList()
         .subscribe((pokemonList) => (this.filteredPokemons = pokemonList));
     }
+
+    const tooltipElems = document.querySelectorAll(".tooltipped");
+    M.Tooltip.init(tooltipElems);
   }
 
   getTypeColor(type: string): string {

@@ -1,15 +1,17 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { Pokemon } from "../pokemon";
 
 @Component({
-  selector: 'app-pokemon-add',
+  selector: "app-pokemon-add",
   template: `
-    <p>
-      pokemon-add works!
-    </p>
+    <h2 class="center">Add a new Pokemon</h2>
+    <app-pokemon-form [pokemon]="pokemon"></app-pokemon-form>
   `,
-  styles: [
-  ]
 })
 export class PokemonAddComponent {
+  pokemon: Pokemon;
 
+  ngOnInit() {
+    this.pokemon = new Pokemon();
+  }
 }

@@ -10,14 +10,15 @@ import { PokemonListComponent } from "./pokemon-list/pokemon-list.component";
 import { PokemonDetailsComponent } from "./pokemon-details/pokemon-details.component";
 import { PokemonFormComponent } from "./pokemon-form/pokemon-form.component";
 import { PokemonEditComponent } from "./pokemon-edit/pokemon-edit.component";
+import { PokemonAddComponent } from "./pokemon-add/pokemon-add.component";
 // Directives
 import { CardStylingDirective } from "./card-styling.directive";
 // Pipes
 import { PkmnTypeColorPipe } from "./pkmn-type-color.pipe";
-import { PokemonAddComponent } from './pokemon-add/pokemon-add.component';
 
 const pokemonRoutes: Routes = [
   { path: "edit/pokemon/:id", component: PokemonEditComponent },
+  { path: "add/pokemon", component: PokemonAddComponent },
   { path: "pokemons", component: PokemonListComponent },
   { path: "pokemon/:id", component: PokemonDetailsComponent },
 ];
@@ -29,11 +30,11 @@ const pokemonRoutes: Routes = [
     PokemonDetailsComponent,
     PokemonFormComponent,
     PokemonEditComponent,
+    PokemonAddComponent,
     // Directives
     CardStylingDirective,
     // Pipes
     PkmnTypeColorPipe,
-    PokemonAddComponent,
   ],
   imports: [CommonModule, FormsModule, RouterModule.forChild(pokemonRoutes)],
   providers: [PokemonService],

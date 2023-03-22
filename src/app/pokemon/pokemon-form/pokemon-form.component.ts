@@ -11,12 +11,15 @@ import { PokemonService } from "../pokemon.service";
 export class PokemonFormComponent {
   @Input() pokemon: Pokemon;
   types: string[];
+  isAddForm: boolean = false;
+  pictureIdPattern = /^\d{3}$/;
 
   constructor(private pokemonService: PokemonService, private router: Router) {}
 
   ngOnInit() {
     console.log(this.pokemon);
     this.types = this.pokemonService.getAllowedPkmnTypeList();
+    this.isAddForm = this.router.url.includes("add");
   }
 
   hasType(type: string): boolean {
@@ -46,9 +49,19 @@ export class PokemonFormComponent {
     return true;
   }
 
+  goToPokemonList() {
+    this.router.navigate(["/pokemons"]);
+  }
+
   onSubmit() {
-    this.pokemonService.updatePokemon(this.pokemon).subscribe(() => {
-      this.router.navigate(["/pokemon", this.pokemon.id]);
-    });
+    if (this.isAddForm) {
+      this.pokemonService
+        .addPokemon(this.pokemon)
+        .subscribe((pokemon) => this.router.navigate(["/pokemon", pokemon.id]));
+    } else {
+      this.pokemonService.updatePokemon(this.pokemon).subscribe(() => {
+        this.router.navigate(["/pokemon", this.pokemon.id]);
+      });
+    }
   }
 }

@@ -2,6 +2,10 @@
     <div class="row">
         <div class="col s8 offset-s2">
             <div class="card-panel">
+                <div *ngIf="isAddForm && pictureIdPattern.test(pokemon.num)" class="center">
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemon.num}}.png"
+                        alt="{{pokemon.name}}" class="responsive-img">
+                </div>
 
                 <!-- Pokemon name -->
                 <div class="form-group">
@@ -10,6 +14,16 @@
                         [(ngModel)]="pokemon.name" name="name" #name="ngModel">
                     <div [hidden]="name.valid || name.pristine" class="card-panel red accent-1">
                         The Pokemon's Name is required (1-25).
+                    </div>
+                </div>
+
+                <!-- Pokemon image -->
+                <div *ngIf="isAddForm" class="form-group">
+                    <label for="pictureId">Picture</label>
+                    <input type="text" class="form-control" id="pictureId" required [pattern]="pictureIdPattern"
+                        [(ngModel)]="pokemon.num" name="pictureId" #pictureId="ngModel">
+                    <div [hidden]="pictureId.valid || pictureId.pristine" class="card-panel red accent-1">
+                        The Pokemon's Picture is required, and must be 3 digits from 001 to 999.
                     </div>
                 </div>
 
@@ -31,7 +45,7 @@
                         pattern="^(?:[0-9]|[1-9][0-9]{1,2})(?:\.[0-9]+)?\s*kg$" [(ngModel)]="pokemon.weight"
                         name="weight" #weight="ngModel">
                     <div [hidden]="weight.valid || weight.pristine" class="card-panel red accent-1">
-                        Weight must be between 0 and 999kg.
+                        Weight must be between "0 kg" and "999 kg".
                     </div>
                 </div>
 
@@ -57,8 +71,9 @@
                 <!-- Submit button -->
                 <div class="divider"></div>
                 <div class="section center">
+                    <button (click)="goToPokemonList()" class="waves-effect waves-light btn red">Cancel</button>
                     <button type="submit" class="waves-effect waves-light btn" [disabled]="!pokemonForm.form.valid">
-                        Valider</button>
+                        Submit</button>
                 </div>
 
             </div>
