@@ -77,6 +77,21 @@ export class PokemonService {
   }
 
   /**
+   * Search pokemons using a search term when its longer than 1 char
+   * @param term The search term entered by the user when looking up pokemons by name
+   * @returns An Observable of Pokemon[] or empty [] if an error occurs
+   */
+  searchPokemon(term: string): Observable<Pokemon[]> {
+    if (term.length <= 1) {
+      return of([]);
+    }
+    return this.http.get<Pokemon[]>(`api/pokemons/?name=${term}`).pipe(
+      tap((pokemonList) => this.log(pokemonList)),
+      catchError((error) => this.handleError(error, []))
+    );
+  }
+
+  /**
    * Logs a response from an API request to the console in a table format.
    * @param response The response to log.
    */

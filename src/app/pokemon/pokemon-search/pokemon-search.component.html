@@ -1,0 +1,18 @@
+<div class="card-panel">
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="searchBox" #searchBox (keyup)="search(searchBox.value)" type="text" class="validate"
+                placeholder="Enter a pokemon's name">
+            <label for="searchBox">Search Pokemons</label>
+            <ul class="collection">
+                <li class="collection-item avatar" *ngFor="let pokemon of pokemons$ | async"
+                    (click)="goToDetail(pokemon)" (click)="goToDetail(pokemon)" style="cursor: pointer;">
+                    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemon.num}}.png"
+                        alt="{{pokemon.name}}" class="circle">
+                    <span class="title right">{{pokemon.num}}</span>
+                    <p>{{pokemon.name}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

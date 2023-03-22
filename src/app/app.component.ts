@@ -19,13 +19,13 @@ export class AppComponent implements OnInit {
   //   );
   // }
 
-  filterPokemons(searchTerm: string) {
-    if (searchTerm) {
-      this.filteredPokemons = this.pokemonList.filter((pokemon) =>
-        pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    } else {
-      this.filteredPokemons = this.pokemonList;
-    }
-  }
+  // filterPokemons(searchTerm: string) {
+  //   if (searchTerm) {
+  //     this.filteredPokemons = this.pokemonList.filter((pokemon) =>
+  //       pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
+  //     );
+  //   } else {
+  //     this.filteredPokemons = this.pokemonList;
+  //   }
+  // }
 }

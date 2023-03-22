@@ -3,11 +3,12 @@
         class="material-icons">add</i></a>
 
 <div class="row">
+    <app-pokemon-search></app-pokemon-search>
     <div *ngFor="let pokemon of filteredPokemons" class="col s12 m6 l4 xl3">
         <div class="card" [style.background-color]="getTypeColor(pokemon.type[0])" pkmnCardStyling="{{pokemon.type[0]}}"
             (click)="goToPokemon(pokemon)" style="cursor: pointer;">
             <div class="card-image">
-                <small class="text-muted right">{{pokemon.num}}</small>
+                <small class="text-muted right" style="padding-right: 5px;">{{pokemon.num}}</small>
                 <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/{{pokemon.num}}.png"
                     alt="{{pokemon.name}}">
             </div>
