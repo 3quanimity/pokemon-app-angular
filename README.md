@@ -1,4 +1,8 @@
-# NgPokemonApp
+# Pokedex - Angular App
+
+### 👉[Live Preview](https://pokemon-app-angular.vercel.app/pokemons)
+
+![App Preview](https://imgur.com/UhLFR24.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.5.
 
