@@ -16,6 +16,7 @@ import { CardStylingDirective } from "./card-styling.directive";
 // Pipes
 import { PkmnTypeColorPipe } from "./pkmn-type-color.pipe";
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
+import { LoaderComponent } from './loader/loader.component';
 
 const pokemonRoutes: Routes = [
   { path: "edit/pokemon/:id", component: PokemonEditComponent },
@@ -37,6 +38,7 @@ const pokemonRoutes: Routes = [
     // Pipes
     PkmnTypeColorPipe,
     PokemonSearchComponent,
+    LoaderComponent,
   ],
   imports: [CommonModule, FormsModule, RouterModule.forChild(pokemonRoutes)],
   providers: [PokemonService],

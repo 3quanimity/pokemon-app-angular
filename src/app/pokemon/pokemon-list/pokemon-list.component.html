@@ -1,9 +1,9 @@
 <a class="btn-floating btn-large waves-effect waves-light red tooltipped" data-position="left"
     data-tooltip="Add a New Pokemon" style="position: fixed; top:70px; right:50px" routerLink="/add/pokemon"><i
         class="material-icons">add</i></a>
-
 <div class="row">
     <app-pokemon-search></app-pokemon-search>
+    <pokeball-loader *ngIf="!filteredPokemons"></pokeball-loader>
     <div *ngFor="let pokemon of filteredPokemons" class="col s12 m6 l4 xl3">
         <div class="card" [style.background-color]="getTypeColor(pokemon.type[0])" pkmnCardStyling="{{pokemon.type[0]}}"
             (click)="goToPokemon(pokemon)" style="cursor: pointer;">

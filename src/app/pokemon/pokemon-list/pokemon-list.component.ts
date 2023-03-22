@@ -21,7 +21,7 @@ export class PokemonListComponent {
         .getPokemonList()
         .subscribe((pokemonList) => (this.filteredPokemons = pokemonList));
     }
-
+    // TODO: tooltip bugged: persists after navigation
     const tooltipElems = document.querySelectorAll(".tooltipped");
     M.Tooltip.init(tooltipElems);
   }

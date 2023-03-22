@@ -6,6 +6,8 @@ import { PokemonService } from "../pokemon.service";
 @Component({
   selector: "app-pokemon-edit",
   template: `
+    <pokeball-loader *ngIf="!pokemon"></pokeball-loader>
+
     <h2 class="center">Edit {{ pokemon?.name }}</h2>
     <p class="center">
       <img
