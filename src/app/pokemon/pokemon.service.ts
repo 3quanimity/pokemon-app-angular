@@ -34,7 +34,14 @@ export class PokemonService {
       );
   }
 
-  private log(response: Pokemon[] | Pokemon | undefined) {
+  deletePokemonById(pokemonId: number): Observable<null> {
+    return this.http.delete(`api/pokemons/${pokemonId}`).pipe(
+      tap((response) => this.log(response)),
+      catchError((error) => this.handleError(error, null))
+    );
+  }
+
+  private log(response: Pokemon[] | Pokemon | undefined | {}) {
     console.table(response);
   }
 

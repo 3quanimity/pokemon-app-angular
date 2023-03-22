@@ -30,4 +30,10 @@ export class PokemonDetailsComponent {
   goToEditPokemon(pokemon: Pokemon) {
     this.router.navigate(["/edit/pokemon", pokemon.id]);
   }
+
+  deletePokemon(pokemon: Pokemon) {
+    this.pokemonService
+      .deletePokemonById(pokemon.id)
+      .subscribe(() => this.goToPokemonList());
+  }
 }
