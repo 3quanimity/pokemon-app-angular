@@ -7,6 +7,10 @@ import { Pokemon } from "./pokemon";
 export class PokemonService {
   constructor(private http: HttpClient) {}
 
+  /**
+   * Gets a list of Pokemons from the API
+   * @returns An Observable of an array of Pokemon or an empty array if an error occurs
+   */
   getPokemonList(): Observable<Pokemon[] | []> {
     return this.http.get<Pokemon[]>("api/pokemons").pipe(
       tap((pokemonList) => this.log(pokemonList)),
@@ -14,6 +18,11 @@ export class PokemonService {
     );
   }
 
+  /**
+   * Gets a specific Pokemon by its id from the API
+   * @param pokemonId The id of the Pokemon to get
+   * @returns An Observable of the Pokemon object or undefined if an error occurs
+   */
   getPokemonById(pokemonId: number): Observable<Pokemon | undefined> {
     return this.http.get<Pokemon>(`api/pokemons/${pokemonId}`).pipe(
       tap((pokemon) => this.log(pokemon)),
@@ -21,6 +30,11 @@ export class PokemonService {
     );
   }
 
+  /**
+   * Updates a Pokemon on the API
+   * @param pokemon The Pokemon object to update
+   * @returns An Observable of null or undefined if an error occurs
+   */
   updatePokemon(pokemon: Pokemon): Observable<null> {
     const httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -34,6 +48,11 @@ export class PokemonService {
       );
   }
 
+  /**
+   * Deletes a specific Pokemon by its id from the API
+   * @param pokemonId The id of the Pokemon to delete
+   * @returns An Observable of null or undefined if an error occurs
+   */
   deletePokemonById(pokemonId: number): Observable<null> {
     return this.http.delete(`api/pokemons/${pokemonId}`).pipe(
       tap((response) => this.log(response)),
@@ -41,15 +60,46 @@ export class PokemonService {
     );
   }
 
+  /**
+   * Adds a new Pokemon to the API
+   * @param pokemon The Pokemon object to add
+   * @returns An Observable of null or undefined if an error occurs
+   */
+  addPokemon(pokemon: Pokemon): Observable<null> {
+    const httpOptions = {
+      headers: new HttpHeaders({ "Content-Type": "application/json" }),
+    };
+
+    return this.http.post("api/pokemons", pokemon, httpOptions).pipe(
+      tap((pokemon) => this.log(pokemon)),
+      catchError((error) => this.handleError(error, null))
+    );
+  }
+
+  /**
+   * Logs a response from an API request to the console in a table format.
+   * @param response The response to log.
+   */
   private log(response: Pokemon[] | Pokemon | undefined | {}) {
     console.table(response);
   }
 
+  /**
+   * Logs an error from an API request to the console and returns an observable with a default value.
+   * @param error The error to handle
+   * @param defaultValue The default value to return
+   * @returns An Observable of the default value
+   */
   private handleError(error: Error, defaultValue: any) {
     console.error(error);
     return of(defaultValue);
   }
 
+  /**
+   * Returns a color string associated with the provided Pokemon type.
+   * @param type - A string representing a Pokemon type.
+   * @returns A color string associated with the provided type.
+   */
   getTypeColor(type: string): string {
     switch (type) {
       case "Water":
@@ -87,6 +137,10 @@ export class PokemonService {
     }
   }
 
+  /**
+   * Returns a list of all allowed Pokemon types.
+   * @returns An array of strings representing all allowed Pokemon types.
+   */
   getAllowedPkmnTypeList(): string[] {
     return [
       "Water",
