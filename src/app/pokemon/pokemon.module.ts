@@ -15,14 +15,32 @@ import { PokemonAddComponent } from "./pokemon-add/pokemon-add.component";
 import { CardStylingDirective } from "./card-styling.directive";
 // Pipes
 import { PkmnTypeColorPipe } from "./pkmn-type-color.pipe";
-import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
-import { LoaderComponent } from './loader/loader.component';
+import { PokemonSearchComponent } from "./pokemon-search/pokemon-search.component";
+import { LoaderComponent } from "./loader/loader.component";
+// Guards
+import { AuthGuard } from "../auth.guard";
 
 const pokemonRoutes: Routes = [
-  { path: "edit/pokemon/:id", component: PokemonEditComponent },
-  { path: "add/pokemon", component: PokemonAddComponent },
-  { path: "pokemons", component: PokemonListComponent },
-  { path: "pokemon/:id", component: PokemonDetailsComponent },
+  {
+    path: "edit/pokemon/:id",
+    component: PokemonEditComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "add/pokemon",
+    component: PokemonAddComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "pokemons",
+    component: PokemonListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "pokemon/:id",
+    component: PokemonDetailsComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({

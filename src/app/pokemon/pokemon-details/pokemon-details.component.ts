@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Pokemon } from "../pokemon";
 import { PokemonService } from "../pokemon.service";
 
+// TODO: either add a navigation to next and previous pokemon, or pokemon evolutions
 @Component({
   selector: "app-pokemon-details",
   templateUrl: "./pokemon-details.component.html",
